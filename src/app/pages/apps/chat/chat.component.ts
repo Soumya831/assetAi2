@@ -40,6 +40,7 @@ export class AppChatComponent implements AfterViewInit, OnInit {
     'date',
     'status',
     'base_price',
+    'created_date'
   ];
   dataSource = new MatTableDataSource<Element>(PRODUCT_DATA);
   selection = new SelectionModel<Element>(true, []);
@@ -52,13 +53,14 @@ export class AppChatComponent implements AfterViewInit, OnInit {
       .observe(['(max-width: 600px)'])
       .subscribe((result: BreakpointState) => {
         this.displayedColumns = result.matches
-          ? ['product_name', 'date', 'status', 'base_price']
+          ? ['product_name', 'date', 'status', 'base_price', 'created_date']
           : [
               'select',
               'product_name',
               'date',
               'status',
               'base_price',
+              'created_date',
               'actions',
             ];
       });

@@ -13,7 +13,7 @@
       </div>
       <div class="col-sm-6 d-flex align-items-center justify-content-end">
         <button mat-flat-button (click)="getAddProductNavigate()">
-          Add Product
+          Create a Cloud Server
         </button>
       </div>
     </div>
@@ -96,7 +96,7 @@
           sticky
           class="f-w-600 mat-subtitle-1 f-s-14"
         >
-          Statu
+          Status
         </th>
         <td mat-cell *matCellDef="let element" class="f-s-14">
           {{ element.date }}
@@ -143,7 +143,20 @@
         </td>
       </ng-container>
 
-      
+        <ng-container matColumnDef="created_date">
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          sticky
+          class="f-w-600 mat-subtitle-1 f-s-14"
+        >
+          Created at
+        </th>
+        <td mat-cell *matCellDef="let element" class="f-s-14">
+          {{ element.date }}
+        </td>
+      </ng-container>
+
       <!-- Actions Column -->
       <ng-container matColumnDef="actions">
         <th
@@ -201,6 +214,9 @@
           </mat-menu>
         </td>
       </ng-container>
+
+    
+
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr
         mat-row
