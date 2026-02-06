@@ -29,7 +29,6 @@ import { AddProductComponent } from './ecommerce/add-product/add-product.compone
 import { ProductDetailsComponent } from './ecommerce/product-details/product-details.component';
 import { ShopComponent } from './ecommerce/shop/shop.component';
 
-
 export const AppsRoutes: Routes = [
   {
     path: '',
@@ -49,10 +48,10 @@ export const AppsRoutes: Routes = [
         path: 'calendar',
         component: AppFullcalendarComponent,
         data: {
-          title: 'Calendar',
+          title: 'Volumes',
           urls: [
             { title: 'Dashboard', url: '/dashboards/dashboard1' },
-            { title: 'Calendar' },
+            { title: 'Volumes' },
           ],
         },
       },
@@ -358,4 +357,4 @@ export const AppsRoutes: Routes = [
       },
     ],
   },
-]; 
+];
