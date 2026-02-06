@@ -38,10 +38,10 @@ export const AppsRoutes: Routes = [
         path: 'chat',
         component: AppChatComponent,
         data: {
-          title: 'Chat',
+          title: 'Server',
           urls: [
             { title: 'Dashboard', url: '/dashboards/dashboard1' },
-            { title: 'Chat' },
+            { title: 'Server' },
           ],
         },
       },

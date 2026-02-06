@@ -8,7 +8,6 @@ import { COLUMN_CHART_TS_SNIPPET } from './code/column-ts-snippet';
 import { Highlight, HighlightAuto } from 'ngx-highlightjs';
 import { HighlightLineNumbers } from 'ngx-highlightjs/line-numbers';
 
-
 import {
   ApexAxisChartSeries,
   ApexChart,
@@ -45,22 +44,21 @@ export type ChartOptions = {
 };
 
 @Component({
-    selector: 'app-column',
-    imports: [NgApexchartsModule, MaterialModule,
-      Highlight,
-      HighlightAuto,
-      HighlightLineNumbers,
-      AppCodeViewComponent,
-    ],
-    templateUrl: './column.component.html'
+  selector: 'app-column',
+  imports: [
+    NgApexchartsModule,
+    MaterialModule,
+    Highlight,
+    HighlightAuto,
+    HighlightLineNumbers,
+    AppCodeViewComponent,
+  ],
+  templateUrl: './column.component.html',
 })
-
 export class AppColumnChartComponent {
-
   // 1 [column with Datepicker]
   codeForColumnChart = COLUMN_CHART_HTML_SNIPPET;
   codeForColumnChartTs = COLUMN_CHART_TS_SNIPPET;
-
 
   @ViewChild('chart') chart: ChartComponent = Object.create(null);
   public columnChartOptions: Partial<ChartOptions> | any;
