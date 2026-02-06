@@ -14,6 +14,7 @@ export interface productsData {
   imagePath: string;
   uname: string;
   position: string;
+  type: string;
   hrate: number;
   skills: string;
   priority: string;
@@ -26,6 +27,7 @@ const ELEMENT_DATA: productsData[] = [
     imagePath: 'assets/images/products/dash-prd-1.jpg',
     uname: 'Minecraf App',
     position: 'Jason Roy',
+    type: 'Sever',
     skills: '3.5',
     hrate: 73.2,
     priority: 'Low',
@@ -36,6 +38,7 @@ const ELEMENT_DATA: productsData[] = [
     imagePath: 'assets/images/products/dash-prd-2.jpg',
     uname: 'Web App Project',
     position: 'Mathew Flintoff',
+    type: 'Sever',
     skills: '3.5',
     hrate: 73.2,
     priority: 'Medium',
@@ -46,6 +49,7 @@ const ELEMENT_DATA: productsData[] = [
     imagePath: 'assets/images/products/dash-prd-3.jpg',
     uname: 'Modernize Dashboard',
     position: 'Anil Kumar',
+    type: 'Sever',
     skills: '3.5',
     hrate: 73.2,
     priority: 'Very High',
@@ -56,6 +60,7 @@ const ELEMENT_DATA: productsData[] = [
     imagePath: 'assets/images/products/dash-prd-4.jpg',
     uname: 'Dashboard Co',
     position: 'George Cruize',
+    type: 'Sever',
     skills: '3.5',
     hrate: 73.2,
     priority: 'High',
@@ -75,7 +80,13 @@ export class AppRevenueProductComponent {
     { value: 'june', viewValue: 'Nov 2025' },
   ];
 
-  displayedColumns: string[] = ['assigned', 'progress', 'priority', 'budget'];
+  displayedColumns: string[] = [
+    'Resource',
+    'Type',
+    'progress',
+    'priority',
+    'budget',
+  ];
   dataSource = ELEMENT_DATA;
 
   constructor() {}
