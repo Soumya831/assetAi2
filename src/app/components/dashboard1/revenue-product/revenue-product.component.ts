@@ -4,10 +4,10 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 
-interface month {
-  value: string;
-  viewValue: string;
-}
+// interface month {
+//   value: string;
+//   viewValue: string;
+// }
 
 export interface productsData {
   id: number;
@@ -15,7 +15,7 @@ export interface productsData {
   uname: string;
   position: string;
   type: string;
-  hrate: number;
+  hrate: string;
   skills: string;
   priority: string;
   progress: string;
@@ -29,7 +29,7 @@ const ELEMENT_DATA: productsData[] = [
     position: 'Jason Roy',
     type: 'Sever',
     skills: '3 days ago',
-    hrate: 73.2,
+    hrate: '1299.00',
     priority: 'Low',
     progress: 'success',
   },
@@ -40,7 +40,7 @@ const ELEMENT_DATA: productsData[] = [
     position: 'Mathew Flintoff',
     type: 'Sever',
     skills: '17 days ago',
-    hrate: 73.2,
+    hrate: '899.00',
     priority: 'Medium',
     progress: 'warning',
   },
@@ -51,7 +51,7 @@ const ELEMENT_DATA: productsData[] = [
     position: 'Anil Kumar',
     type: 'Sever',
     skills: '13 days ago',
-    hrate: 73.2,
+    hrate: '599.00',
     priority: 'Very High',
     progress: 'secondary',
   },
@@ -62,7 +62,7 @@ const ELEMENT_DATA: productsData[] = [
     position: 'George Cruize',
     type: 'Sever',
     skills: '20 days ago',
-    hrate: 73.2,
+    hrate: '1299.00',
     priority: 'High',
     progress: 'error',
   },
@@ -74,12 +74,6 @@ const ELEMENT_DATA: productsData[] = [
   templateUrl: './revenue-product.component.html',
 })
 export class AppRevenueProductComponent {
-  months: month[] = [
-    { value: 'mar', viewValue: 'Sep 2025' },
-    { value: 'apr', viewValue: 'Oct 2025' },
-    { value: 'june', viewValue: 'Nov 2025' },
-  ];
-
   displayedColumns: string[] = [
     'Resource',
     'Type',

@@ -34,7 +34,7 @@
           <td mat-cell *matCellDef="let element" class="">
             <span
               ><span class="f-w-600 f-s-14">{{ element.hrate }}</span
-              >%</span
+              > INR</span
             >
           </td>
         </ng-container>
@@ -44,13 +44,10 @@
             Forecasted
           </th>
           <td mat-cell *matCellDef="let element">
-            <span
-              class="bg-light-{{ element.progress }} text-{{
-                element.progress
-              }} rounded-sm f-w-600 p-6 p-y-4 f-s-12"
+             <span
+              ><span class="f-w-600 f-s-14">{{ element.hrate }}</span
+              > INR</span
             >
-              {{ element.priority | titlecase }}
-            </span>
           </td>
         </ng-container>
 
