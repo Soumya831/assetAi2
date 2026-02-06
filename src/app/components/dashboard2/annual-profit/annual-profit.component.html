@@ -2,14 +2,13 @@
   <mat-card-content>
     <mat-card-title>Annual Profit</mat-card-title>
 
-    <div class="bg-light-primary rounded m-y-20 overflow-hidden m-b-24">
+    <!-- <div class="bg-light-primary rounded m-y-20 overflow-hidden m-b-24">
       <div class="p-24">
         <div class="d-flex align-items-center justify-content-between m-b-10">
           <span class="f-s-14">Conversion Rate</span>
           <h4 class="f-s-28 f-w-600">18.4%</h4>
         </div>
       </div>
-      <!-- chart -->
       <apx-chart
         [series]="annualprofitChart.series"
         [chart]="annualprofitChart.chart"
@@ -17,9 +16,9 @@
         [markers]="annualprofitChart.markers"
         [tooltip]="annualprofitChart.tooltip"
       ></apx-chart>
-    </div>
+    </div> -->
 
-    <div class="d-flex justify-content-between align-items-center p-b-12 b-b-1 m-t-20">
+    <!-- <div class="d-flex justify-content-between align-items-center p-b-12 b-b-1 m-t-20">
       <div>
         <span class="text-muted f-s-14 f-w-500 d-block">Added to Cart</span>
         <span class="f-s-13 f-w-500 m-t-4">5 clicks</span>
@@ -52,6 +51,25 @@
         <h5 class="f-w-700 f-s-15 m-b-4">$21,120.70</h5>
         <span class="text-success f-s-13 f-w-500">+9.3%</span>
       </div>
-    </div>
+    </div> -->
+  <!-- output view -->
+
+    <apx-chart
+      [series]="columnChartOptions.series"
+      [chart]="columnChartOptions.chart"
+      [xaxis]="columnChartOptions.xaxis"
+      [yaxis]="columnChartOptions.yaxis"
+      [grid]="columnChartOptions.grid"
+      [stroke]="columnChartOptions.stroke"
+      [tooltip]="columnChartOptions.tooltip"
+      [plotOptions]="columnChartOptions.plotOptions"
+      [dataLabels]="columnChartOptions.dataLabels"
+      [legend]="columnChartOptions.legend"
+      [colors]="columnChartOptions.colors"
+      [markers]="columnChartOptions.markers"
+    >
+    </apx-chart>
+  
+  
   </mat-card-content>
 </mat-card>

@@ -1,38 +1,35 @@
 import { Component, ViewChild } from '@angular/core';
-import { MaterialModule } from '../../../material.module';
 import { TablerIconsModule } from 'angular-tabler-icons';
 import {
-  ApexChart,
-  ChartComponent,
-  ApexDataLabels,
-  ApexLegend,
-  ApexStroke,
-  ApexTooltip,
   ApexAxisChartSeries,
-  ApexPlotOptions,
-  NgApexchartsModule,
+  ApexChart,
+  ApexDataLabels,
   ApexFill,
+  ApexLegend,
+  ApexPlotOptions,
+  ApexTooltip,
+  ChartComponent,
+  NgApexchartsModule,
 } from 'ng-apexcharts';
+import { MaterialModule } from '../../../material.module';
 
-export interface revenueForecastChart {
+export type ChartOptions = {
   series: ApexAxisChartSeries;
   chart: ApexChart;
-  dataLabels: ApexDataLabels;
-  plotOptions: ApexPlotOptions;
+  xaxis: ApexXAxis;
+  yaxis: ApexYAxis;
+  stroke: any;
+  theme: ApexTheme;
   tooltip: ApexTooltip;
-  stroke: ApexStroke;
+  dataLabels: ApexDataLabels;
   legend: ApexLegend;
+  colors: string[];
+  markers: any;
+  grid: ApexGrid;
+  plotOptions: ApexPlotOptions;
   fill: ApexFill;
-}
-
-interface performanceLists {
-  id: number;
-  color: string;
-  textcolor: string;
-  icon: string;
-  title: string;
-  subtext: string;
-}
+  labels: string[];
+};
 
 @Component({
   selector: 'app-revenue-forecast',
@@ -42,129 +39,38 @@ interface performanceLists {
 })
 export class AppRevenueForecastComponent {
   @ViewChild('chart') chart: ChartComponent = Object.create(null);
-  public revenueForecastChart!: Partial<revenueForecastChart> | any;
+  public doughnutChartOptions: Partial<ChartOptions> | any;
 
   constructor() {
-    this.revenueForecastChart = {
-      series: [
-        {
-          name: '2024',
-          data: [1.2, 2.7, 1, 3.6, 2.1, 2.7, 2.2, 1.3, 2.5],
-        },
-        {
-          name: '2025',
-          data: [-2.8, -1.1, -2.5, -1.5, -2.3, -1.9, -1, -2.1, -1.3],
-        },
-      ],
-
+    this.doughnutChartOptions = {
+      series: [45, 15, 27, 18, 35],
       chart: {
-        type: 'bar',
-        fontFamily: 'inherit',
+        id: 'donut-chart',
+        type: 'donut',
+        height: 350,
+        fontFamily: "'Plus Jakarta Sans', sans-serif",
         foreColor: '#adb0bb',
-        height: 295,
-        stacked: true,
-        offsetX: -15,
-        toolbar: {
-          show: false,
-        },
-      },
-      colors: ['var(--mat-sys-primary)', 'var(--mat-sys-error)'],
-      plotOptions: {
-        bar: {
-          horizontal: false,
-          barHeight: '60%',
-          columnWidth: '15%',
-          borderRadius: [6],
-          borderRadiusApplication: 'end',
-          borderRadiusWhenStacked: 'all',
-        },
       },
       dataLabels: {
         enabled: false,
       },
+      plotOptions: {
+        pie: {
+          donut: {
+            size: '70px',
+          },
+        },
+      },
       legend: {
-        show: false,
-      },
-      grid: {
         show: true,
-        padding: {
-          top: 0,
-          bottom: 0,
-          right: 0,
-        },
-        borderColor: 'rgba(0,0,0,0.05)',
-        xaxis: {
-          lines: {
-            show: true,
-          },
-        },
-        yaxis: {
-          lines: {
-            show: true,
-          },
-        },
+        position: 'bottom',
+        width: '50px',
       },
-
-      yaxis: {
-        min: -5,
-        max: 5,
-        tickAmount: 4,
-      },
-      xaxis: {
-        axisBorder: {
-          show: false,
-        },
-        axisTicks: {
-          show: false,
-        },
-        categories: [
-          'Jan',
-          'Feb',
-          'Mar',
-          'Apr',
-          'May',
-          'Jun',
-          'July',
-          'Aug',
-          'Sep',
-        ],
-        labels: {
-          style: { fontSize: '13px', colors: '#adb0bb', fontWeight: '400' },
-        },
-      },
+      colors: ['#5D87FF', '#ECF2FF', '#49BEFF', '#E8F7FF', '#FFAE1F'],
       tooltip: {
         theme: 'dark',
-        x: {
-          show: false,
-        },
+        fillSeriesColor: false,
       },
     };
   }
-
-  performanceLists: performanceLists[] = [
-    {
-      id: 1,
-      color: 'light',
-      textcolor: 'dark',
-      icon: 'solar:pie-chart-2-linear',
-      title: '$96,640',
-      subtext: 'Total',
-    },
-    {
-      id: 2,
-      color: 'light-primary',
-      textcolor: 'primary',
-      icon: 'solar:dollar-minimalistic-linear',
-      title: '$48,820',
-      subtext: 'Profit',
-    },
-    {
-      id: 3,
-      color: 'light-error',
-      textcolor: 'error',
-      icon: 'solar:database-linear',
-      title: '$48,450',
-      subtext: 'Earnings',
-    },
-  ];
 }

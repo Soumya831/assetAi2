@@ -1,28 +1,39 @@
 import { Component, ViewChild } from '@angular/core';
-import { MaterialModule } from '../../../material.module';
-import {
-  ApexChart,
-  ChartComponent,
-  ApexDataLabels,
-  ApexLegend,
-  ApexStroke,
-  ApexTooltip,
-  ApexAxisChartSeries,
-  ApexPlotOptions,
-  NgApexchartsModule,
-  ApexFill,
-} from 'ng-apexcharts';
 
-export interface annualprofitChart {
+import {
+  ApexAxisChartSeries,
+  ApexChart,
+  ApexDataLabels,
+  ApexFill,
+  ApexGrid,
+  ApexLegend,
+  ApexPlotOptions,
+  ApexTheme,
+  ApexTooltip,
+  ApexXAxis,
+  ApexYAxis,
+  ChartComponent,
+  NgApexchartsModule,
+} from 'ng-apexcharts';
+import { MaterialModule } from '../../../material.module';
+
+export type ChartOptions = {
   series: ApexAxisChartSeries;
   chart: ApexChart;
-  dataLabels: ApexDataLabels;
-  plotOptions: ApexPlotOptions;
+  xaxis: ApexXAxis;
+  yaxis: ApexYAxis;
+  stroke: any;
+  theme: ApexTheme;
   tooltip: ApexTooltip;
-  stroke: ApexStroke;
+  dataLabels: ApexDataLabels;
   legend: ApexLegend;
+  colors: string[];
+  markers: any;
+  grid: ApexGrid;
+  plotOptions: ApexPlotOptions;
   fill: ApexFill;
-}
+  labels: string[];
+};
 
 @Component({
   selector: 'app-annual-profit',
@@ -32,41 +43,75 @@ export interface annualprofitChart {
 })
 export class AppAnnualProfitComponent {
   @ViewChild('chart') chart: ChartComponent = Object.create(null);
-  public annualprofitChart!: Partial<annualprofitChart> | any;
-
+  public columnChartOptions: Partial<ChartOptions> | any;
   constructor() {
-    this.annualprofitChart = {
+    //Column chart.
+    this.columnChartOptions = {
       series: [
         {
-          name: 'Users',
-          color: 'rgb(99, 91, 255)',
-          data: [25, 66, 20, 40, 12, 58, 20],
+          name: 'A',
+          data: [400, 120, 140, 130, 200, 150, 140, 130, 300, 120, 140, 150],
+        },
+        {
+          name: 'B',
+          data: [200, 188, 242, 300, 200, 400, 230, 300, 200, 400, 180, 300],
+        },
+        {
+          name: 'C',
+          data: [100, 200, 400, 600, 100, 200, 400, 370, 240, 200, 280, 330],
         },
       ],
-
       chart: {
-        type: 'area',
-        height: 80,
-        sparkline: {
-          enabled: true,
+        fontFamily: 'DM Sans,sans-serif',
+        foreColor: '#a1aab2',
+        height: 300,
+        type: 'bar',
+        stacked: true,
+        toolbar: {
+          show: false,
         },
-        group: 'sparklines',
-        fontFamily: 'inherit',
-        foreColor: '#adb0bb',
+      },
+      plotOptions: {
+        bar: {
+          columnWidth: '40%',
+          barHeight: '40%',
+        },
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      markers: {
+        size: 3,
       },
       stroke: {
-        curve: 'smooth',
-        width: 2,
+        curve: 'straight',
+        width: '0',
       },
-
-      markers: {
-        size: 0,
+      colors: ['#398bf7', '#06d79c'],
+      legend: {
+        show: true,
+      },
+      grid: {
+        show: true,
+        strokeDashArray: 0,
+        borderColor: 'rgba(0,0,0,0.1)',
+        xaxis: {
+          lines: {
+            show: true,
+          },
+        },
+        yaxis: {
+          lines: {
+            show: true,
+          },
+        },
+      },
+      xaxis: {
+        type: 'category',
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
       },
       tooltip: {
         theme: 'dark',
-        x: {
-          show: false,
-        },
       },
     };
   }
