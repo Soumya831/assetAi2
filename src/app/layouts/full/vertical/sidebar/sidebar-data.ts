@@ -10,7 +10,7 @@ export const navItems: NavItem[] = [
   //   route: '/dashboards/dashboard1',
   // },
     {
-    displayName: 'Dashboard 2',
+    displayName: 'Dashboard',
     iconName: 'solar:widget-add-line-duotone',
     route: '/dashboards/dashboard2',
   },
