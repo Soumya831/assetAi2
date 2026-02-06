@@ -1,23 +1,21 @@
 <div class="b-1 rounded">
-  @if (selection.selected.length === 0) {
-    <div class="row justify-content-between gap-16 m-x-15">
-      <div class="col-sm-4 m-t-14">
-        <mat-form-field appearance="outline" class="w-30" color="primary">
-          <mat-icon matPrefix>search</mat-icon>
-          <input
-            matInput
-            (keyup)="applyFilter($event)"
-            placeholder="Search Product"
-          />
-        </mat-form-field>
-      </div>
-      <div class="col-sm-6 d-flex align-items-center justify-content-end">
-        <button mat-flat-button (click)="getAddProductNavigate()">
-          Create a Cloud Server
-        </button>
-      </div>
+  <div class="row justify-content-between gap-16 m-x-15">
+    <div class="col-sm-4 m-t-14">
+      <mat-form-field appearance="outline" class="w-30" color="primary">
+        <mat-icon matPrefix>search</mat-icon>
+        <input
+          matInput
+          (keyup)="applyFilter($event)"
+          placeholder="Search Product"
+        />
+      </mat-form-field>
     </div>
-  }
+    <div class="col-sm-6 d-flex align-items-center justify-content-end">
+      <button mat-flat-button (click)="getAddProductNavigate()">
+        Create a Cloud Server
+      </button>
+    </div>
+  </div>
 
   <div class="table-responsive b-t-1 p-1 example-container">
     <table #table mat-table [dataSource]="dataSource" class="w-100" matSort>
@@ -32,7 +30,6 @@
         </th>
         <td mat-cell *matCellDef="let element">
           <div class="d-flex align-items-center">
-            >
             <div class="m-l-16">
               <h6 class="mat-subtitle-1 f-s-14 f-w-600">
                 {{ element.product_name }}
@@ -78,13 +75,13 @@
           sticky
           class="f-w-600 mat-subtitle-1 f-s-14"
         >
-        IP
+          IP
         </th>
         <td mat-cell *matCellDef="let element" class="f-s-14">
           {{ element.date }}
         </td>
       </ng-container>
-      
+
       <!-- Symbol Column -->
       <ng-container matColumnDef="base_price">
         <th
@@ -122,7 +119,7 @@
           sticky
           class="f-w-600 mat-subtitle-1 f-s-14"
         >
-         Actions
+          Actions
         </th>
         <td
           mat-cell
