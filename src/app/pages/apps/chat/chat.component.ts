@@ -9,7 +9,6 @@ import {
 } from '@angular/core';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { MaterialModule } from 'src/app/material.module';
-
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
@@ -35,12 +34,12 @@ export class AppChatComponent implements AfterViewInit, OnInit {
   readonly dialog = inject(MatDialog);
 
   displayedColumns: string[] = [
-    'select',
+    // 'select',
     'product_name',
     'date',
     'status',
     'base_price',
-    'created_date'
+    'created_date',
   ];
   dataSource = new MatTableDataSource<Element>(PRODUCT_DATA);
   selection = new SelectionModel<Element>(true, []);
@@ -55,7 +54,7 @@ export class AppChatComponent implements AfterViewInit, OnInit {
         this.displayedColumns = result.matches
           ? ['product_name', 'date', 'status', 'base_price', 'created_date']
           : [
-              'select',
+              // 'select',
               'product_name',
               'date',
               'status',
