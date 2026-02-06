@@ -25,10 +25,10 @@ const ELEMENT_DATA: productsData[] = [
   {
     id: 1,
     imagePath: 'assets/images/products/dash-prd-1.jpg',
-    uname: 'Minecraf App',
+    uname: 'Jenkins-Server',
     position: 'Jason Roy',
     type: 'Sever',
-    skills: '3.5',
+    skills: '3 days ago',
     hrate: 73.2,
     priority: 'Low',
     progress: 'success',
@@ -36,10 +36,10 @@ const ELEMENT_DATA: productsData[] = [
   {
     id: 2,
     imagePath: 'assets/images/products/dash-prd-2.jpg',
-    uname: 'Web App Project',
+    uname: 'Windows-server-2022',
     position: 'Mathew Flintoff',
     type: 'Sever',
-    skills: '3.5',
+    skills: '17 days ago',
     hrate: 73.2,
     priority: 'Medium',
     progress: 'warning',
@@ -50,7 +50,7 @@ const ELEMENT_DATA: productsData[] = [
     uname: 'Modernize Dashboard',
     position: 'Anil Kumar',
     type: 'Sever',
-    skills: '3.5',
+    skills: '13 days ago',
     hrate: 73.2,
     priority: 'Very High',
     progress: 'secondary',
@@ -61,7 +61,7 @@ const ELEMENT_DATA: productsData[] = [
     uname: 'Dashboard Co',
     position: 'George Cruize',
     type: 'Sever',
-    skills: '3.5',
+    skills: '20 days ago',
     hrate: 73.2,
     priority: 'High',
     progress: 'error',
@@ -83,9 +83,9 @@ export class AppRevenueProductComponent {
   displayedColumns: string[] = [
     'Resource',
     'Type',
-    'progress',
-    'priority',
-    'budget',
+    'Current',
+    'Forecasted',
+    'Created',
   ];
   dataSource = ELEMENT_DATA;
 
