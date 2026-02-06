@@ -56,9 +56,9 @@ export class AppChatComponent implements AfterViewInit, OnInit {
           : [
               // 'select',
               'product_name',
-              'date',
               'status',
               'base_price',
+              'date',
               'created_date',
               'actions',
             ];

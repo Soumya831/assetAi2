@@ -32,12 +32,7 @@
         </th>
         <td mat-cell *matCellDef="let element">
           <div class="d-flex align-items-center">
-            <img
-              [src]="element.imagePath"
-              alt="users"
-              width="56"
-              class="rounded-circle"
-            />
+            >
             <div class="m-l-16">
               <h6 class="mat-subtitle-1 f-s-14 f-w-600">
                 {{ element.product_name }}
@@ -49,21 +44,7 @@
           </div>
         </td>
       </ng-container>
-      <!-- Name Column -->
-      <ng-container matColumnDef="date">
-        <th
-          mat-header-cell
-          *matHeaderCellDef
-          sticky
-          class="f-w-600 mat-subtitle-1 f-s-14"
-        >
-          Status
-        </th>
-        <td mat-cell *matCellDef="let element" class="f-s-14">
-          {{ element.date }}
-        </td>
-      </ng-container>
-      <!-- Weight Column -->
+
       <ng-container matColumnDef="status">
         <th
           mat-header-cell
@@ -78,17 +59,32 @@
             <span
               class="bg-light-secondary text-secondary rounded f-w-600 p-6 p-y-4 f-s-12"
             >
-              Stock
+              active
             </span>
           } @else {
             <span
               class="bg-light-error text-error rounded f-w-600 p-6 p-y-4 f-s-12"
             >
-              Out Of Stock
+              shutoff
             </span>
           }
         </td>
       </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="date">
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          sticky
+          class="f-w-600 mat-subtitle-1 f-s-14"
+        >
+        IP
+        </th>
+        <td mat-cell *matCellDef="let element" class="f-s-14">
+          {{ element.date }}
+        </td>
+      </ng-container>
+      
       <!-- Symbol Column -->
       <ng-container matColumnDef="base_price">
         <th
@@ -126,7 +122,7 @@
           sticky
           class="f-w-600 mat-subtitle-1 f-s-14"
         >
-          Region
+         Actions
         </th>
         <td
           mat-cell
